@@ -8,9 +8,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "postinstall": "node -e \"require('fs').mkdirSync('game/vendor',
-    {recursive:true});require('fs').copyFileSync('node_modules/three/build/three.min.js'
-    ,'game/vendor/three.min.js')\"",
+    "postinstall": "node -e \"require('fs').mkdirSync('game/vendor',{recursive:true});require('fs').copyFileSync('node_modules/three/build/three.min.js','game/vendor/three.min.js')\"",
     "start": "electron .",
     "dist": "electron-builder",
     "dist:win": "electron-builder --win",
