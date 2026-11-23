@@ -1,0 +1,35 @@
+{
+  "name": "trincheras-de-sangre",
+  "productName": "Trincheras de Sangre",
+  "version": "27.0.0",
+  "description": "Trincheras de Sangre — Frente Occidental",
+  "main": "main.js",
+  "author": "Trincheras de Sangre",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "postinstall": "node scripts/copy-three.js",
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "dependencies": {
+    "three": "0.128.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.trincheras.desangre",
+    "productName": "Trincheras de Sangre",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "game/**/*", "package.json"],
+    "win": { "target": ["nsis", "portable"], "icon": "build/icon.ico" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true },
+    "mac": { "target": "dmg", "category": "public.app-category.games" },
+    "linux": { "target": ["AppImage"], "category": "Game" }
+  }
+}
